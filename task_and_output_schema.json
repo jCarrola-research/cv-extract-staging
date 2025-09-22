@@ -1,0 +1,148 @@
+{
+  "task_name": "IC2_Ontology_Aligned_Extraction",
+  "procedure": [
+    "Load ontology_kb.json and kb_manifest.json; verify sha256.",
+    "Iterate pages; then iterate paragraphs/spans on each page.",
+    "For each span: build vertical_map (priority\u2192program/thrust\u2192invariant\u2192problem\u2192so_what) and horizontal_map (mechanisms/deliverables/beneficiaries/anchors).",
+    "Fill empathy_frame (problem_addressed, bottleneck_solved, beneficiaries, harms_avoided, design_commitments).",
+    "Score alignment (ut_alignment_pct, texas_alignment_pct) using 0/25/50/75/100 rubric; add matched_signals[] and notes tied to the cited page.",
+    "Add scale_of_impact, style_tone (\u22643), narrative_device (1), evidence{type,page,locator_note}, map_to_letter, fit_score, confidence.",
+    "Omit unknown fields. Output strictly valid JSON matching output_schema."
+  ],
+  "alignment_rubric": {
+    "ut_alignment_pct": {
+      "100": "Explicit UT/IC\u00b2 units co-lead/fund/host (e.g., Dell Med, Good Systems).",
+      "75": "Named UT/IC\u00b2 units present; indirect program tie.",
+      "50": "UT affiliation present (authors/centers) only.",
+      "25": "Conceptual match to UT priorities; no UT entity cited.",
+      "0": "No UT relevance."
+    },
+    "texas_alignment_pct": {
+      "100": "Texas locale/agency/community central (e.g., Permian Basin, safety-net providers).",
+      "75": "Multiple Texas partners/orgs; geography not central.",
+      "50": "At least one Texas signal among others.",
+      "25": "Thematic Texas relevance only.",
+      "0": "No Texas relevance."
+    }
+  },
+  "output_schema": {
+    "schema_version": "ic2-ontology-v1",
+    "ontology_kb": {
+      "manifest_only": true
+    },
+    "extraction": {
+      "resource_id": "<doc_short_id>",
+      "doc_meta": {
+        "title": "<title>",
+        "source_ref": "<file_id>",
+        "pages": "<int>"
+      },
+      "pages": [
+        {
+          "page": "<int>",
+          "items": [
+            {
+              "paragraph_index": "<int>",
+              "span_id": "<doc>_p<page>_par<idx>",
+              "text_excerpt": "<optional short excerpt>",
+              "vertical_map": {
+                "priority_id": "<id>",
+                "program_ids": [
+                  "<id>",
+                  "..."
+                ],
+                "thrust_ids": [
+                  "<id>",
+                  "..."
+                ],
+                "invariant_ids": [
+                  "<id>",
+                  "..."
+                ],
+                "problem_ids": [
+                  "<id>",
+                  "..."
+                ],
+                "so_what_ids": [
+                  "<id>",
+                  "..."
+                ]
+              },
+              "horizontal_map": {
+                "mechanisms": [
+                  "<from catalog or new>"
+                ],
+                "deliverables": [
+                  "<from catalog>"
+                ],
+                "beneficiaries": [
+                  "<from catalog or new>"
+                ],
+                "ut_texas_anchors": [
+                  "<from anchors>"
+                ]
+              },
+              "empathy_frame": {
+                "problem_addressed": "<string>",
+                "bottleneck_solved": "<string>",
+                "beneficiaries": [
+                  "<string>",
+                  "..."
+                ],
+                "harms_avoided": [
+                  "<string>",
+                  "..."
+                ],
+                "design_commitments": [
+                  "human-in-the-loop",
+                  "bias audit",
+                  "transparency"
+                ]
+              },
+              "alignment": {
+                "ut_alignment_pct": "<0|25|50|75|100>",
+                "texas_alignment_pct": "<0|25|50|75|100>",
+                "matched_signals": [
+                  "<entity/geo/synonym>",
+                  "..."
+                ],
+                "notes": "<one sentence rationale>"
+              },
+              "scale_of_impact": {
+                "scope": "local|state|regional|national|global|institutional",
+                "horizon": "short|medium|long"
+              },
+              "style_tone": [
+                "plainspoken",
+                "specific",
+                "analytical",
+                "empathetic"
+              ],
+              "narrative_device": "problem-solution|analysis summary|case study|data story|vignette|policy narrative|event recap|expert commentary|success showcase|network map|award spotlight",
+              "evidence": {
+                "type": "quote|figure|statistic|report|list|project description",
+                "page": "<int>",
+                "locator_note": "<string>"
+              },
+              "map_to_letter": "Executive Summary|Problem/Opportunity|Approach & Methods|Evidence & Proof Points|Partnerships|Student Engagement|Outreach|Achievements|Texas Relevance & Pathways|Asks & Next Steps",
+              "fit_score": "<0-1>",
+              "confidence": "<0-1>"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "scoring": {
+    "fit_score_formula": "0.25*Impact + 0.20*Evidence + 0.20*UTTX + 0.15*Feasibility + 0.10*Beneficiaries + 0.05*TechSocial + 0.05*Differentiation",
+    "components": {
+      "Impact": "scale_of_impact present + so_what_ids present",
+      "Evidence": "evidence.page present; type weight strong/moderate/limited",
+      "UTTX": "avg(ut_alignment_pct, texas_alignment_pct)/100",
+      "Feasibility": "deliverables + program_ids + (bbr_modality or maturity)",
+      "Beneficiaries": "non-empty beneficiaries",
+      "TechSocial": "invariant_ids present + problem_ids present",
+      "Differentiation": "so_what is specific"
+    }
+  }
+}

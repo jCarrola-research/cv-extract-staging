@@ -1,0 +1,38 @@
+{
+  "name": "ic2-ontology-v1",
+  "version": "1.0.0",
+  "sha256": "8c351e77a8a3f9f9e3febc3594170d8ed336a8bab06605e6c8c683f4d746bc5c",
+  "contents": {
+    "counts": {
+      "priorities": 6,
+      "programs": 10,
+      "bbr_modalities": 5,
+      "thrusts": 7,
+      "invariant_objects": 9,
+      "problem_classes": 6,
+      "so_what_templates": 6
+    },
+    "vocabularies": [
+      "style_tone_vocab",
+      "narrative_device_vocab"
+    ],
+    "crosswalks": [
+      "priority_to_program",
+      "program_to_invariant",
+      "thrust_to_invariant",
+      "invariant_to_problem_so_what"
+    ],
+    "signals": [
+      "safety_net_ai",
+      "precision_sdoh",
+      "grid_equity_resilience",
+      "permian_archetypes",
+      "policy_workforce_advocacy",
+      "convening_synthesis"
+    ]
+  },
+  "source_notes": "Ontology derived from IC\u00b2 Annual Report 2023\u20132024 and IC\u00b2 Programs & BBR modalities.",
+  "files": [
+    "ontology_kb.json"
+  ]
+}

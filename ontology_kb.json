@@ -1,0 +1,511 @@
+{
+  "schema_version": "ic2-ontology-v1",
+  "sources": [
+    {
+      "id": "IC2_AR2023-2024",
+      "type": "pdf",
+      "title": "IC\u00b2 Annual Report 2023\u20132024: Year of AI"
+    },
+    {
+      "id": "IC2_Specific_Contexts",
+      "type": "notes",
+      "title": "IC\u00b2 Programs & BBR Modalities (compiled)"
+    }
+  ],
+  "priorities": [
+    {
+      "id": "responsible_ai_health",
+      "label": "Responsible AI in Health Care"
+    },
+    {
+      "id": "reducing_health_disparities",
+      "label": "Reducing Health Disparities"
+    },
+    {
+      "id": "resilient_communities",
+      "label": "Resilient Communities"
+    },
+    {
+      "id": "energy_transition",
+      "label": "Energy Transition"
+    },
+    {
+      "id": "economic_development",
+      "label": "Economic Development"
+    },
+    {
+      "id": "entrepreneurship",
+      "label": "Entrepreneurship"
+    }
+  ],
+  "programs": [
+    {
+      "id": "student_capstones",
+      "label": "Student Capstones"
+    },
+    {
+      "id": "visiting_scholars",
+      "label": "Visiting Scholars"
+    },
+    {
+      "id": "hub_readiness",
+      "label": "Readiness Training for Historically Underutilized Businesses"
+    },
+    {
+      "id": "march_econ_madness",
+      "label": "March Economic Madness"
+    },
+    {
+      "id": "kozmetsky_challenge",
+      "label": "George Kozmetsky Student Challenge"
+    },
+    {
+      "id": "regional_recovery",
+      "label": "Regional Economic Recovery Initiative"
+    },
+    {
+      "id": "home_to_texas",
+      "label": "Home to Texas"
+    },
+    {
+      "id": "health_ai_for_all",
+      "label": "Health AI for All (conference)"
+    },
+    {
+      "id": "bbr",
+      "label": "Bureau of Business Research (BBR)"
+    },
+    {
+      "id": "pedl",
+      "label": "Permian Energy Development Lab"
+    }
+  ],
+  "bbr_modalities": [
+    {
+      "id": "decision_modeling",
+      "label": "Behavioral & Decision Modeling"
+    },
+    {
+      "id": "surveys_focus",
+      "label": "Surveys & Focus Groups"
+    },
+    {
+      "id": "custom_interdisciplinary",
+      "label": "Customized Interdisciplinary Research"
+    },
+    {
+      "id": "econ_impact",
+      "label": "Economic Impact Analysis"
+    },
+    {
+      "id": "targeted_entrepreneur_training",
+      "label": "Targeted Entrepreneurial Training"
+    }
+  ],
+  "thrusts": [
+    {
+      "id": "safety_net_ai",
+      "label": "Safety\u2011Net Health AI"
+    },
+    {
+      "id": "precision_sdoh",
+      "label": "Precision Social Determinants of Health"
+    },
+    {
+      "id": "youth_mental_health_ai",
+      "label": "Black Youth Suicide / Mental Health AI"
+    },
+    {
+      "id": "grid_equity_resilience",
+      "label": "Equity\u2011Aware Grid Resilience"
+    },
+    {
+      "id": "permian_archetypes",
+      "label": "Permian Community Archetypes"
+    },
+    {
+      "id": "policy_workforce_advocacy",
+      "label": "Policy & AI Workforce Advocacy"
+    },
+    {
+      "id": "convening_synthesis",
+      "label": "Multi\u2011stakeholder Convening & Synthesis"
+    }
+  ],
+  "invariant_objects": [
+    {
+      "id": "human_in_loop_codesign",
+      "label": "Human\u2011in\u2011the\u2011loop AI co\u2011design"
+    },
+    {
+      "id": "bias_mitigating_diagnostic",
+      "label": "Bias\u2011mitigating diagnostic pipeline"
+    },
+    {
+      "id": "precision_sdoh_mapping",
+      "label": "Precision SDoH mapping"
+    },
+    {
+      "id": "equity_constrained_optimization",
+      "label": "Equity\u2011constrained decision optimization"
+    },
+    {
+      "id": "community_archetype_segmentation",
+      "label": "Community archetype segmentation"
+    },
+    {
+      "id": "knowledge_to_practice",
+      "label": "Knowledge\u2011to\u2011practice translation"
+    },
+    {
+      "id": "knowledge_to_policy",
+      "label": "Knowledge\u2011to\u2011policy bridge"
+    },
+    {
+      "id": "capability_uplift_transformer",
+      "label": "Capability uplift for SMEs/HUBs"
+    },
+    {
+      "id": "evidence_aggregation_operator",
+      "label": "Evidence aggregation operator"
+    }
+  ],
+  "problem_classes": [
+    {
+      "id": "algorithmic_bias",
+      "label": "Algorithmic bias & low trust"
+    },
+    {
+      "id": "hidden_structural_drivers",
+      "label": "Hidden structural drivers of outcomes"
+    },
+    {
+      "id": "disaster_inequity",
+      "label": "Disaster response & infrastructure inequity"
+    },
+    {
+      "id": "one_size_fits_none",
+      "label": "One\u2011size\u2011fits\u2011all program failures"
+    },
+    {
+      "id": "translation_gap",
+      "label": "Translation gap from research to adoption"
+    },
+    {
+      "id": "sme_barriers",
+      "label": "SME/HUB procurement barriers"
+    }
+  ],
+  "so_what_templates": [
+    {
+      "id": "align_ai_with_clinic_equity",
+      "label": "AI aligned with clinical realities & equity constraints \u2192 adoption & trust"
+    },
+    {
+      "id": "target_root_causes",
+      "label": "Target root causes where social drivers have largest marginal effect"
+    },
+    {
+      "id": "ensure_fair_allocation",
+      "label": "Ensure fair, efficient resource allocation during crises"
+    },
+    {
+      "id": "tailor_to_archetypes",
+      "label": "Tailor programs by community archetype to avoid misfit"
+    },
+    {
+      "id": "bridge_to_pilots",
+      "label": "Bridge knowledge to pilots & scale"
+    },
+    {
+      "id": "unlock_sme_value",
+      "label": "Unlock SME/HUB participation & local prosperity"
+    }
+  ],
+  "deliverables_catalog": [
+    "strategy_report",
+    "policy_brief",
+    "dataset",
+    "model_code",
+    "prototype",
+    "dashboard",
+    "conference_synthesis",
+    "training_program",
+    "impact_study",
+    "visualization",
+    "analysis_brief"
+  ],
+  "beneficiary_sets": [
+    "safetynet_providers",
+    "underserved_patients",
+    "rural_communities",
+    "black_youth",
+    "energy_communities",
+    "students",
+    "smes_hubs",
+    "policy_makers",
+    "utilities",
+    "community_orgs"
+  ],
+  "anchors": {
+    "ut_units": [
+      "IC\u00b2 Institute",
+      "Bureau of Business Research (BBR)",
+      "Good Systems",
+      "Dell Medical School",
+      "Texas Advanced Computing Center (TACC)",
+      "Design in Health"
+    ],
+    "texas_geos": [
+      "Austin",
+      "Uvalde",
+      "Permian Basin",
+      "statewide partners"
+    ]
+  },
+  "style_tone_vocab": [
+    "plainspoken",
+    "specific",
+    "analytical",
+    "outcome-led",
+    "empathetic",
+    "cautionary",
+    "collaborative",
+    "celebratory",
+    "storytelling",
+    "descriptive",
+    "inspirational"
+  ],
+  "narrative_device_vocab": [
+    "problem-solution",
+    "analysis summary",
+    "case study",
+    "data story",
+    "vignette",
+    "policy narrative",
+    "event recap",
+    "expert commentary",
+    "success showcase",
+    "network map",
+    "award spotlight",
+    "survey summary",
+    "student story",
+    "highlight reel"
+  ],
+  "crosswalks": {
+    "priority_to_program": [
+      {
+        "priority_id": "responsible_ai_health",
+        "program_ids": [
+          "health_ai_for_all",
+          "student_capstones",
+          "bbr"
+        ]
+      },
+      {
+        "priority_id": "reducing_health_disparities",
+        "program_ids": [
+          "health_ai_for_all",
+          "student_capstones",
+          "bbr"
+        ]
+      },
+      {
+        "priority_id": "resilient_communities",
+        "program_ids": [
+          "bbr",
+          "regional_recovery"
+        ]
+      },
+      {
+        "priority_id": "energy_transition",
+        "program_ids": [
+          "pedl"
+        ]
+      },
+      {
+        "priority_id": "economic_development",
+        "program_ids": [
+          "bbr",
+          "hub_readiness",
+          "home_to_texas"
+        ]
+      },
+      {
+        "priority_id": "entrepreneurship",
+        "program_ids": [
+          "student_capstones",
+          "visiting_scholars",
+          "kozmetsky_challenge",
+          "march_econ_madness"
+        ]
+      }
+    ],
+    "program_to_invariant": [
+      {
+        "program_id": "health_ai_for_all",
+        "invariant_ids": [
+          "evidence_aggregation_operator",
+          "knowledge_to_policy",
+          "human_in_loop_codesign"
+        ]
+      },
+      {
+        "program_id": "student_capstones",
+        "invariant_ids": [
+          "knowledge_to_practice"
+        ]
+      },
+      {
+        "program_id": "hub_readiness",
+        "invariant_ids": [
+          "capability_uplift_transformer"
+        ]
+      },
+      {
+        "program_id": "pedl",
+        "invariant_ids": [
+          "community_archetype_segmentation"
+        ]
+      },
+      {
+        "program_id": "bbr",
+        "invariant_ids": [
+          "equity_constrained_optimization",
+          "knowledge_to_policy"
+        ]
+      }
+    ],
+    "thrust_to_invariant": [
+      {
+        "thrust_id": "safety_net_ai",
+        "invariant_ids": [
+          "human_in_loop_codesign",
+          "bias_mitigating_diagnostic"
+        ]
+      },
+      {
+        "thrust_id": "precision_sdoh",
+        "invariant_ids": [
+          "precision_sdoh_mapping"
+        ]
+      },
+      {
+        "thrust_id": "grid_equity_resilience",
+        "invariant_ids": [
+          "equity_constrained_optimization"
+        ]
+      },
+      {
+        "thrust_id": "permian_archetypes",
+        "invariant_ids": [
+          "community_archetype_segmentation"
+        ]
+      },
+      {
+        "thrust_id": "policy_workforce_advocacy",
+        "invariant_ids": [
+          "knowledge_to_policy"
+        ]
+      },
+      {
+        "thrust_id": "convening_synthesis",
+        "invariant_ids": [
+          "evidence_aggregation_operator"
+        ]
+      }
+    ],
+    "invariant_to_problem_so_what": [
+      {
+        "invariant_id": "human_in_loop_codesign",
+        "problem_id": "algorithmic_bias",
+        "so_what_id": "align_ai_with_clinic_equity"
+      },
+      {
+        "invariant_id": "bias_mitigating_diagnostic",
+        "problem_id": "algorithmic_bias",
+        "so_what_id": "align_ai_with_clinic_equity"
+      },
+      {
+        "invariant_id": "precision_sdoh_mapping",
+        "problem_id": "hidden_structural_drivers",
+        "so_what_id": "target_root_causes"
+      },
+      {
+        "invariant_id": "equity_constrained_optimization",
+        "problem_id": "disaster_inequity",
+        "so_what_id": "ensure_fair_allocation"
+      },
+      {
+        "invariant_id": "community_archetype_segmentation",
+        "problem_id": "one_size_fits_none",
+        "so_what_id": "tailor_to_archetypes"
+      },
+      {
+        "invariant_id": "knowledge_to_practice",
+        "problem_id": "translation_gap",
+        "so_what_id": "bridge_to_pilots"
+      },
+      {
+        "invariant_id": "capability_uplift_transformer",
+        "problem_id": "sme_barriers",
+        "so_what_id": "unlock_sme_value"
+      }
+    ]
+  },
+  "signals": {
+    "entities": {
+      "named": [
+        "Good Systems",
+        "Dell Medical School",
+        "Episcopal Health Foundation",
+        "All of Us",
+        "Permian Energy Development Lab",
+        "NREL",
+        "Sandia",
+        "AIM-AHEAD"
+      ]
+    },
+    "keywords": {
+      "safety_net_ai": [
+        "safety-net",
+        "underserved",
+        "rural providers",
+        "clinic workflow",
+        "human touch"
+      ],
+      "precision_sdoh": [
+        "social determinants",
+        "All of Us",
+        "cohesion",
+        "depression risk",
+        "population health"
+      ],
+      "grid_equity_resilience": [
+        "SVI",
+        "flood",
+        "synthetic grid",
+        "resource allocation",
+        "utilities"
+      ],
+      "permian_archetypes": [
+        "Permian Basin",
+        "archetypes",
+        "workforce",
+        "energy communities"
+      ],
+      "policy_workforce_advocacy": [
+        "Capitol Hill",
+        "MS in AI",
+        "workforce",
+        "advocacy"
+      ],
+      "convening_synthesis": [
+        "conference report",
+        "synthesis",
+        "highlight video",
+        "multi-stakeholder"
+      ]
+    }
+  }
+}
