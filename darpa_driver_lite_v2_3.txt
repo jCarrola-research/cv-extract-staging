@@ -1,0 +1,44 @@
+DRIVER — DARPA Tech - Reality Extraction (v2.3 LITE)
+
+FILES YOU MUST LOAD:
+• darpa_system_rules_v2_3_lite.json (rules & behavior)
+• kb_manifest_v3_3_lite.json (ontology manifest)
+• darpa_ontology_kb_v2_2.json (DARPA ontology with Tech - Reality axes; space - padded separators)
+• darpa_task_and_output_schema_v2_3_lite.json (procedure + strict output schema, LITE)
+
+TOKENIZATION NORMALIZATION (apply during parsing and generation):
+• Space - pad hyphens, slashes, and dashes in human - readable text: e.g., page - by - page; PDF / DOCX / XLSX / CSV / TXT; go / no - go; Phase I – III.
+• Do NOT alter IDs or machine - readable keys.
+
+PRE - FLIGHT:
+1) Parse kb_manifest_v3_3_lite.json.
+2) Load darpa_system_rules_v2_3_lite.json and darpa_task_and_output_schema_v2_3_lite.json.
+3) Verify KB file hashes in kb_manifest_v3_3_lite.json.
+
+EXECUTION (FOR EACH ATTACHED DOCUMENT: PDF / DOCX / XLSX / CSV / TXT):
+A) Determine <doc_short_id> from filename and classify doc_type ∈ ontology_kb.doc_types (if present).
+B) Iterate pages → paragraphs / spans (or sheets → tables for spreadsheets); assign a page_label (2 – 3 words).
+C) Extract per output_schema_lite and compute:
+   - tech_reality (triage_label, trl_estimate, srl_estimate, evidence_strength, fictionality_score if applicable).
+   - supporting_artifacts (cross - file evidence_bundles), compute reality_uplift per rubric.
+   - darpa_alignment (pm_signal_pct, moonshot_risk_reward, t3_transition_score, heilmeier flags) when feasible.
+   - proof_path (risk - retirement experiments with go / no - go metrics).
+D) Aggregate document_level.doc_reality_rollup using strongest items + evidence_bundles.
+
+OUTPUT:
+- File name: extraction_<doc_short_id>.json
+- Return ONLY valid JSON per output_schema_lite. No prose outside JSON.
+- If file attachments are supported: attach the JSON.
+- Else embed:
+  BEGIN_FILE: extraction_<doc_short_id>.json (base64)
+  <base64 - encoded - json>
+  END_FILE
+
+POLICY:
+- Use "NA" when unknown. Do not guess.
+- evidence.page (or sheet / cell) is REQUIRED for each item.
+- Prefer substantive text; skip boilerplate.
+
+GUARDRAIL:
+- Internal reasoning is permitted but MUST NOT be emitted. If logging is needed, output only a machine - checkable
+  status object with counts / types (no step - by - step rationale), placed under `meta.status_log` INSIDE the JSON.

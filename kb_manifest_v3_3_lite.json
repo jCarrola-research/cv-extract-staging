@@ -1,0 +1,15 @@
+{
+  "name": "ic2_darpa_ontology_bundle_lite",
+  "version": "3.3.0-lite",
+  "ontologies": [
+    {
+      "name": "darpa-ontology-v2.2",
+      "version": "2.2.0",
+      "files": [
+        "darpa_ontology_kb_v2_2.json"
+      ],
+      "sha256": "4649a0b66c4eaceb73a4c96a162bd3e8da5ab129210ef4f5c8afbab250cc29f4",
+      "notes": "DARPA - ready ontology with Tech - Reality triage & evidence levels; space - padded separators for better tokenization."
+    }
+  ]
+}

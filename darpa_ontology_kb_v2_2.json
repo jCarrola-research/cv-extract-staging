@@ -1,0 +1,400 @@
+{
+  "schema_version": "darpa-ontology-v2.2",
+  "tokenization_normalization": {
+    "space_pad_characters": [
+      "-",
+      "/",
+      "–",
+      "—",
+      "→",
+      "↦"
+    ],
+    "notes": "Space - pad characters in instructions and human - readable strings to improve tokenization."
+  },
+  "sources": [
+    {
+      "id": "DARPA_PM_Call",
+      "type": "notes",
+      "title": "DARPA Program Manager role & expectations (user - provided)"
+    },
+    {
+      "id": "Speculative_Narrative",
+      "type": "pdf",
+      "title": "NATO 2099: Who We Want to Be"
+    },
+    {
+      "id": "IC2_Scaffold",
+      "type": "kb",
+      "title": "IC² crosswalk scaffolding pattern"
+    }
+  ],
+  "priorities": [
+    {
+      "id": "ai_autonomy",
+      "label": "AI & Autonomy"
+    },
+    {
+      "id": "cyber_info",
+      "label": "Cyber & Information Advantage"
+    },
+    {
+      "id": "bio_human_perf",
+      "label": "Bio & Human Performance"
+    },
+    {
+      "id": "energy_resilience",
+      "label": "Energy & Resilience"
+    },
+    {
+      "id": "space_comms_sensing",
+      "label": "Space, Communications & Sensing"
+    },
+    {
+      "id": "adv_manuf_materials",
+      "label": "Advanced Manufacturing & Materials"
+    },
+    {
+      "id": "socio_technical",
+      "label": "Socio - Technical Systems & Resilient Societies"
+    }
+  ],
+  "program_modalities": [
+    {
+      "id": "seedling",
+      "label": "Seedling (high - risk exploratory)"
+    },
+    {
+      "id": "feeder",
+      "label": "Feeder / Exploratory (pre - Program)"
+    },
+    {
+      "id": "full_program_phased",
+      "label": "Full Program (Phase I – III) with go / no - go metrics"
+    },
+    {
+      "id": "challenge_prize",
+      "label": "Challenge / Prize + Performer Sprints"
+    },
+    {
+      "id": "test_eval_campaign",
+      "label": "Test & Evaluation Campaigns / Field Experiments"
+    },
+    {
+      "id": "transition_partnering",
+      "label": "Transition Partnering (Service Labs, PEOs, Industry)"
+    },
+    {
+      "id": "policy_frameworks",
+      "label": "Policy / Governance Frameworks for dual - use & ethics"
+    }
+  ],
+  "invariant_objects": [
+    {
+      "id": "heilmeier_coverage",
+      "label": "Heilmeier Questions Coverage (problem, novelty, metrics, payoff, risk, transition)"
+    },
+    {
+      "id": "risk_retirement_experiment",
+      "label": "Risk - Retirement Experiment (cheap, fast, decisive)"
+    },
+    {
+      "id": "performer_ensemble",
+      "label": "Performer Ensemble (academia + industry + gov mix)"
+    },
+    {
+      "id": "milestone_cadence",
+      "label": "Milestone Cadence & Urgency (3 – 5 yr timebox)"
+    },
+    {
+      "id": "dual_use_guardrails",
+      "label": "Dual - Use & Ethics Guardrails (misuse, governance)"
+    },
+    {
+      "id": "operational_testbed",
+      "label": "Operational Testbed / Red - Team environment"
+    },
+    {
+      "id": "capability_prototype",
+      "label": "Capability Prototype (alpha → beta → ops)"
+    },
+    {
+      "id": "data_readiness",
+      "label": "Data Readiness & Pipeline (collection, curation, rights)"
+    },
+    {
+      "id": "transition_playbook",
+      "label": "Transition Playbook (T3 to Services / Commercial)"
+    }
+  ],
+  "problem_classes": [
+    {
+      "id": "cognitive_security",
+      "label": "Cognitive Security & Neuro / Info Threats"
+    },
+    {
+      "id": "cyber_deterrence",
+      "label": "Cyber Deterrence & Resilience"
+    },
+    {
+      "id": "data_bias_scarcity",
+      "label": "Data Scarcity, Bias & Distribution Shift"
+    },
+    {
+      "id": "v_v_validation",
+      "label": "Verification, Validation & Safety at scale"
+    },
+    {
+      "id": "valley_of_death",
+      "label": "Valley of Death (transition & adoption barriers)"
+    },
+    {
+      "id": "dual_use_ethics",
+      "label": "Dual - Use / Ethics & Governance Failure"
+    },
+    {
+      "id": "coordination_failure",
+      "label": "Multi - actor Coordination & Incentive Misalignment"
+    },
+    {
+      "id": "contested_envs",
+      "label": "Operating in Contested / Degraded Environments"
+    }
+  ],
+  "so_what_templates": [
+    {
+      "id": "operational_advantage",
+      "label": "Deliver decisive operational advantage under constraints"
+    },
+    {
+      "id": "societal_resilience",
+      "label": "Increase societal resilience to systemic shocks & manipulation"
+    },
+    {
+      "id": "transition_to_service",
+      "label": "Transition to Service / Agency with committed partners"
+    },
+    {
+      "id": "reduce_time_to_impact",
+      "label": "Prove / disprove faster; compress time - to - impact"
+    },
+    {
+      "id": "cost_effectiveness",
+      "label": "Achieve orders - of - magnitude cost or efficiency gains"
+    },
+    {
+      "id": "safety_trust",
+      "label": "Improve safety, assurance, and public trust"
+    }
+  ],
+  "deliverables_catalog": [
+    "alpha_demo",
+    "beta_prototype",
+    "reference_architecture",
+    "simulation_env",
+    "evaluation_protocol",
+    "open_dataset",
+    "field_experiment",
+    "policy_framework",
+    "tech_transfer_package",
+    "transition_agreement"
+  ],
+  "beneficiary_sets": [
+    "warfighters",
+    "first_responders",
+    "civilians_at_risk",
+    "critical_infra_operators",
+    "public_sector_decision_makers",
+    "r_and_d_community",
+    "startups_smbs",
+    "allies_partners"
+  ],
+  "anchors": {
+    "us_entities": [
+      "Service Labs & PEOs",
+      "Combatant Commands",
+      "FFRDCs",
+      "Universities",
+      "State & Local Agencies",
+      "Industry Primes",
+      "Startups / SMBs",
+      "Allied Institutions"
+    ],
+    "regional": [
+      "Texas (optional)",
+      "Other U.S. states",
+      "Allied nations"
+    ]
+  },
+  "style_tone_vocab": [
+    "audacious",
+    "urgent",
+    "evidence - led",
+    "analytical",
+    "plainspoken",
+    "empathetic",
+    "mission - focused",
+    "outcome - led"
+  ],
+  "narrative_device_vocab": [
+    "problem - solution",
+    "analysis summary",
+    "case study",
+    "data story",
+    "vignette",
+    "policy narrative",
+    "experiment log",
+    "milestone recap",
+    "pitch narrative"
+  ],
+  "crosswalks": {
+    "priority_to_invariant": [
+      {
+        "priority_id": "ai_autonomy",
+        "invariant_ids": [
+          "heilmeier_coverage",
+          "risk_retirement_experiment",
+          "operational_testbed",
+          "capability_prototype",
+          "data_readiness"
+        ]
+      },
+      {
+        "priority_id": "cyber_info",
+        "invariant_ids": [
+          "operational_testbed",
+          "risk_retirement_experiment",
+          "dual_use_guardrails",
+          "transition_playbook"
+        ]
+      },
+      {
+        "priority_id": "bio_human_perf",
+        "invariant_ids": [
+          "heilmeier_coverage",
+          "dual_use_guardrails",
+          "operational_testbed"
+        ]
+      },
+      {
+        "priority_id": "energy_resilience",
+        "invariant_ids": [
+          "transition_playbook",
+          "operational_testbed"
+        ]
+      },
+      {
+        "priority_id": "space_comms_sensing",
+        "invariant_ids": [
+          "operational_testbed",
+          "milestone_cadence"
+        ]
+      },
+      {
+        "priority_id": "adv_manuf_materials",
+        "invariant_ids": [
+          "capability_prototype",
+          "transition_playbook"
+        ]
+      },
+      {
+        "priority_id": "socio_technical",
+        "invariant_ids": [
+          "dual_use_guardrails",
+          "transition_playbook",
+          "performer_ensemble"
+        ]
+      }
+    ],
+    "invariant_to_problem_so_what": [
+      {
+        "invariant_id": "operational_testbed",
+        "problem_id": "v_v_validation",
+        "so_what_id": "safety_trust"
+      },
+      {
+        "invariant_id": "risk_retirement_experiment",
+        "problem_id": "data_bias_scarcity",
+        "so_what_id": "reduce_time_to_impact"
+      },
+      {
+        "invariant_id": "transition_playbook",
+        "problem_id": "valley_of_death",
+        "so_what_id": "transition_to_service"
+      },
+      {
+        "invariant_id": "dual_use_guardrails",
+        "problem_id": "dual_use_ethics",
+        "so_what_id": "safety_trust"
+      },
+      {
+        "invariant_id": "performer_ensemble",
+        "problem_id": "coordination_failure",
+        "so_what_id": "reduce_time_to_impact"
+      },
+      {
+        "invariant_id": "data_readiness",
+        "problem_id": "data_bias_scarcity",
+        "so_what_id": "cost_effectiveness"
+      }
+    ]
+  },
+  "signals": {
+    "entities": {
+      "named": [
+        "PEO",
+        "FFRDC",
+        "Combatant Command",
+        "transition",
+        "go / no - go",
+        "seedling",
+        "field experiment"
+      ]
+    },
+    "keywords": {
+      "cognitive_security": [
+        "neurotechnology",
+        "cognitive hacking",
+        "memetic",
+        "synthetic media",
+        "disinformation"
+      ],
+      "contested_envs": [
+        "degraded",
+        "denied",
+        "resilient",
+        "antifragile",
+        "contested"
+      ],
+      "risk_retirement": [
+        "risk retirement",
+        "cheap test",
+        "prototype",
+        "kill the idea fast"
+      ],
+      "transition": [
+        "T2 / T3",
+        "program of record",
+        "acquisition",
+        "commercialization"
+      ]
+    }
+  },
+  "tech_reality": {
+    "triage_labels": [
+      "sci_fi_sketch",
+      "concept_hypothesis",
+      "algorithm_prototype",
+      "system_prototype",
+      "field_pilot",
+      "transitioning_capability"
+    ],
+    "evidence_strength_levels": [
+      "none",
+      "anecdotal",
+      "limited",
+      "moderate",
+      "strong",
+      "replicated"
+    ]
+  }
+}

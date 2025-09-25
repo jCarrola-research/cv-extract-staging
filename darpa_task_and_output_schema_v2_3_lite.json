@@ -1,0 +1,164 @@
+{
+  "task_name": "DARPA_TechReality_Extraction_v2_3_lite",
+  "procedure": [
+    "Load kb_manifest_v3_3_lite.json and darpa_ontology_kb_v2_2.json; verify DARPA KB sha256.",
+    "Iterate pages → paragraphs / spans (or sheets → tables for spreadsheets). Label each page with a 2 – 3 word page_label.",
+    "Build vertical_map (priority_ids → invariant_ids → problem_ids → so_what_ids) and horizontal_map (mechanisms / deliverables / beneficiaries / region_anchors).",
+    "Fill empathy_frame (problem_addressed, beneficiaries).",
+    "Compute tech_reality (triage_label, trl_estimate, srl_estimate, evidence_strength). Link supporting_artifacts and compute reality_uplift.",
+    "If triage_label ∈ {sci_fi_sketch, concept_hypothesis} OR evidence_strength ∈ {none, limited}, populate reality_uplift_requirements with ≥ 1 concrete items (required_evidence, suggested_risk_retirement, candidate_partners, metrics_needed).",
+    "Add proof_path (next_2_experiments with duration_weeks and success_metric).",
+    "Aggregate document_level.doc_reality_rollup (dominant_label; TRL / SRL ranges; evidence_strength modes; fictionality_avg if applicable; evidence_bundles; top_uplift_requirements).",
+    "Return strictly valid JSON matching output_schema_lite. Use 'NA' when unknown. Never guess."
+  ],
+  "output_schema_lite": {
+    "schema_version": "darpa-ontology-v2.3-lite",
+    "extraction": {
+      "resource_id": "<doc_short_id>",
+      "doc_meta": {
+        "title": "<title>",
+        "source_ref": "<file_id>",
+        "pages": "<int>"
+      },
+      "document_level": {
+        "doc_reality_rollup": {
+          "dominant_label": "<triage_label>",
+          "trl_range": "<min - max | NA>",
+          "srl_range": "<min - max | NA>",
+          "evidence_strength_modes": [
+            "<levels>"
+          ],
+          "fictionality_avg": "<0 - 1 | NA>",
+          "evidence_bundles": [
+            {
+              "bundle_id": "<id>",
+              "artifacts": [
+                "<file>",
+                "..."
+              ],
+              "pages": [
+                "<int or sheet / cell>",
+                "..."
+              ],
+              "summary": "<what these prove>"
+            }
+          ],
+          "top_uplift_requirements": [
+            {
+              "target_next_label": "<triage_label>",
+              "required_evidence": [
+                "<item>",
+                "..."
+              ],
+              "suggested_risk_retirement": [
+                "<experiment>",
+                "..."
+              ]
+            }
+          ]
+        }
+      },
+      "pages": [
+        {
+          "page": "<int>",
+          "page_label": "<2 – 3 words>",
+          "items": [
+            {
+              "span_id": "<doc>_p<page>_par<idx>",
+              "paragraph_index": "<int>",
+              "text_excerpt": "<12 – 40 words verbatim>",
+              "vertical_map": {
+                "priority_ids": [
+                  "<id>"
+                ],
+                "invariant_ids": [
+                  "<id>"
+                ],
+                "problem_ids": [
+                  "<id>"
+                ],
+                "so_what_ids": [
+                  "<id>"
+                ]
+              },
+              "horizontal_map": {
+                "mechanisms": [
+                  "<mechanism>"
+                ],
+                "deliverables": [
+                  "<deliverable>"
+                ],
+                "beneficiaries": [
+                  "<beneficiary>"
+                ],
+                "region_anchors": [
+                  "<entity / region>"
+                ]
+              },
+              "empathy_frame": {
+                "problem_addressed": "<one line>",
+                "beneficiaries": [
+                  "<string>",
+                  "..."
+                ]
+              },
+              "tech_reality": {
+                "triage_label": "sci_fi_sketch | concept_hypothesis | algorithm_prototype | system_prototype | field_pilot | transitioning_capability",
+                "evidence_strength": "none | anecdotal | limited | moderate | strong | replicated",
+                "trl_estimate": "<1 - 9 | NA>",
+                "srl_estimate": "<1 - 9 | NA>"
+              },
+              "reality_uplift_requirements": {
+                "target_next_label": "<triage_label>",
+                "required_evidence": [
+                  "<named dataset | benchmark | ablation | replication | partner_LOE | test_report | code_release>"
+                ],
+                "suggested_risk_retirement": [
+                  "<cheap decisive experiment>"
+                ],
+                "candidate_partners": [
+                  "<lab | service | industry>"
+                ],
+                "metrics_needed": [
+                  "<metric>"
+                ]
+              },
+              "proof_path": {
+                "next_2_experiments": [
+                  {
+                    "name": "<risk - retirement exp>",
+                    "duration_weeks": "<int>",
+                    "success_metric": "<metric>"
+                  }
+                ]
+              },
+              "evidence": {
+                "type": "quote | figure | report | project description | table | dataset | fictional scenario",
+                "page": "<int or sheet / cell>",
+                "locator_note": "<string>"
+              },
+              "map_to_letter": "Problem / Opportunity | Approach & Methods | Proof & Test | Transition & Partners | Impact & Ethics | Asks & Next Steps",
+              "innovation_tags": [
+                "moonshot",
+                "ethics",
+                "transition"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "scoring_lite": {
+    "fit_score_formula": "0.20 * Reality + 0.20 * Evidence + 0.20 * Transition + 0.15 * Impact + 0.10 * Feasibility + 0.10 * Beneficiaries + 0.05 * Differentiation",
+    "components": {
+      "Reality": "inverse fictionality + normalized TRL / SRL + reality_uplift",
+      "Evidence": "evidence.page present; strength weighted (replicated > strong > moderate > limited > anecdotal > none)",
+      "Transition": "t3_transition_score value (0 – 1) plus presence of transition_hooks",
+      "Impact": "so_what present + scale_of_impact quality",
+      "Feasibility": "deliverables + invariant_ids + timebox_path present",
+      "Beneficiaries": "non - empty beneficiaries",
+      "Differentiation": "novel_approach flag in heilmeier_coverage"
+    }
+  }
+}
